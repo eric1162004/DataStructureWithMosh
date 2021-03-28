@@ -1,15 +1,39 @@
 package HashTable;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class HashTableDemo {
 
     public static void show(){
 
-
+        FindFirstNonRepeatedCharacter("A GreenApple");
 
     }
+
+    private static void FindFirstNonRepeatedCharacter(String string) {
+
+        var string_lowered = string.toLowerCase().toCharArray();
+        Map<Character, Integer> map = new HashMap<>();
+
+        // Build a frequency map
+        for (var c : string_lowered)
+            if(Character.isLetter(c))
+                if (map.containsKey(c))
+                    map.put(c, map.get(c) + 1);
+                else
+                    map.put(c, 1);
+
+        // Print the first Character that has frequency of 1
+        for(var c: string_lowered)
+            if(map.containsKey(c) && map.get(c) == 1) {
+                System.out.println(c);
+                break;
+            }
+
+    }
+
     public static void Example1(){
         Map<Integer, String> map  =new HashMap<>();
         map.put(1, "Mosh");
