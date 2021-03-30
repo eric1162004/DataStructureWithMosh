@@ -5,9 +5,10 @@ import HashTable.HashTableDemo;
 import Heap.HeapTest;
 import Heap.MaxHeap;
 import Trie.TrieTest;
+import WeightedGraph.WeightedGraphTest;
 
 public class Main {
     public static void main(String[] args) {
-        GraphTest.Test();
+        WeightedGraphTest.Test();
     }
 }
